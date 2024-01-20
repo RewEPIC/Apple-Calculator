@@ -30,14 +30,14 @@ struct Calculator {
         var parsedDouble = Decimal(string: display)
         guard parsedDouble != 0 && !isDecimal else {
             var displays = display.components(separatedBy: ".")
-            displays[0] = Decimal(string: displays[0])!.formatted()
+            displays[0] = Decimal(string: displays[0])!.decimalValue
             let newDisplay = displays.joined(separator: ".")
             return (isNegative ? "-\(newDisplay)" : newDisplay)
         }
         if isNegative {
             parsedDouble?.negate()
         }
-        var formatted = display.count > 15 ? parsedDouble?.scientific : parsedDouble?.formatted()
+        var formatted = display.count > 15 ? parsedDouble?.scientificValue : parsedDouble?.decimalValue
         if display.last == "." {
             formatted! += "."
         }

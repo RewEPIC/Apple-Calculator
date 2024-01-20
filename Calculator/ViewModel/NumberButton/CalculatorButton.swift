@@ -34,7 +34,6 @@ private extension CalculatorButton {
         self.tintColor = .clear
         self.backgroundColor = .gray
         self.layer.cornerRadius = self.frame.height / 2
-        self.layer.cornerCurve = .circular
     }
     
     func setupLabel() {

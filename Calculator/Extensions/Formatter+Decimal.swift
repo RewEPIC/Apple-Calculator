@@ -9,6 +9,11 @@ import UIKit
 
 extension Formatter {
     
+    static let decimalFormatters: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     static let stringFormatters: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -31,7 +36,10 @@ extension Decimal {
     var stringValue: String {
         return Formatter.stringFormatters.string(for: self) ?? "0"
     }
-    var scientific: String {
+    var scientificValue: String {
         return Formatter.scientificFormatters.string(for: self) ?? "0"
+    }
+    var decimalValue: String {
+        return Formatter.decimalFormatters.string(for: self) ?? "0"
     }
 }

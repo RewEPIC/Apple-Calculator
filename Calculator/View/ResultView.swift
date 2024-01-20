@@ -20,6 +20,6 @@ class ResultView: UIView {
     func setupUI() {
         self.backgroundColor = .white
         
-        let safeArea = self.safeAreaLayoutGuide
+//        let safeArea = self.safeAreaLayoutGuide
     }
 }
