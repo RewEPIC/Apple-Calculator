@@ -18,6 +18,7 @@ extension ViewController: CalculatorButtonDelegate {
         updateDeleteBtn(deleteButton: button)
         calculator.onDeleteTapped()
         updateNumberLabel()
+        //test
     }
     
     
