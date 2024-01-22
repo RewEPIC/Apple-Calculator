@@ -9,17 +9,13 @@ import UIKit
 
 class ResultView: UIView {
     
-    var view: UIView!
-    
-    public func setup(superview: UIView) {
-        self.view = superview
-        
+    public func setup() -> UIView {
         setupUI()
+        return self
     }
     
     func setupUI() {
         self.backgroundColor = .white
         
-//        let safeArea = self.safeAreaLayoutGuide
     }
 }

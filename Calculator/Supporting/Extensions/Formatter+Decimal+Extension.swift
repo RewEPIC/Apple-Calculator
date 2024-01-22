@@ -19,6 +19,7 @@ extension Formatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ""
+        formatter.maximumFractionDigits = 10
         return formatter
     }()
     

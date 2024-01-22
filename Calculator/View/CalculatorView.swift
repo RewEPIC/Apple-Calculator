@@ -26,10 +26,16 @@ private extension CalculatorView {
     }
     
     func setupUI() {
-        self.backgroundColor = .black
-        let resultView = ResultView()
-        resultView.setup(superview: self)
-        self.addSubview(resultView)
+        self.backgroundColor = .gray
+        
+        let resultView = ResultView().setup()
+        let buttonView = ButtonView().setup()
+        
+        self.flex(.column).build(views: [
+            resultView,
+            buttonView
+            
+        ])
     }
     
     

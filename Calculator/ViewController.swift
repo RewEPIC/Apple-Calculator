@@ -80,13 +80,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupUI()
+        setupData()
+        setupLayout()
     }
     
-    func setupUI() {
+    func setupData() {
         self.delegate = self
         self.calculator = Calculator()
         self.numberLabel.text = calculator.displayText
+    }
+    
+    func setupLayout() {
+        let calculatorView = CalculatorView()
+        self.view.addSubview(calculatorView)
     }
 }
 

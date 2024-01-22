@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA5C85D82B5A59630020898C /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5C85D72B5A59630020898C /* CalculatorView.swift */; };
 		CA6EB0962B5A61B90001045A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB0952B5A61B90001045A /* ViewController.swift */; };
-		CA6EB0982B5A62EF0001045A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB0972B5A62EF0001045A /* CalculatorViewController.swift */; };
-		CA6EB09A2B5A64E50001045A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB0992B5A64E50001045A /* UIViewController.swift */; };
+		CA6EB09A2B5A64E50001045A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB0992B5A64E50001045A /* UIViewController+Extension.swift */; };
 		CA6EB09C2B5A68500001045A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB09B2B5A68500001045A /* ButtonView.swift */; };
 		CA6EB09E2B5A68730001045A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB09D2B5A68730001045A /* ResultView.swift */; };
 		CA9231042B5633CC007689D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9231032B5633CC007689D4 /* AppDelegate.swift */; };
@@ -21,12 +20,17 @@
 		CA9231252B5633CE007689D4 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9231242B5633CE007689D4 /* CalculatorUITests.swift */; };
 		CA9231272B5633CE007689D4 /* CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9231262B5633CE007689D4 /* CalculatorUITestsLaunchTests.swift */; };
 		CA9231372B564273007689D4 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9231352B564273007689D4 /* CalculatorButton.swift */; };
-		CA9231382B564273007689D4 /* NumberButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9231362B564273007689D4 /* NumberButton.xib */; };
 		CA9231402B566502007689D4 /* HorizontalColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92313F2B566502007689D4 /* HorizontalColumn.swift */; };
 		CA9231422B566512007689D4 /* HorizontalColumn.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9231412B566512007689D4 /* HorizontalColumn.xib */; };
 		CA9231482B566CF5007689D4 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9231472B566CF5007689D4 /* ViewControllerDelegate.swift */; };
 		CA92314B2B5672D7007689D4 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92314A2B5672D7007689D4 /* Calculator.swift */; };
-		CA9231502B593214007689D4 /* Formatter+Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92314F2B593214007689D4 /* Formatter+Decimal.swift */; };
+		CA9231502B593214007689D4 /* Formatter+Decimal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92314F2B593214007689D4 /* Formatter+Decimal+Extension.swift */; };
+		E4958EB32B5D0E19005A990C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EB22B5D0E19005A990C /* CalculatorViewController.swift */; };
+		E4958EB52B5D1070005A990C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EB42B5D1070005A990C /* UIView+Extension.swift */; };
+		E4958EB72B5D118A005A990C /* FlexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EB62B5D118A005A990C /* FlexLayout.swift */; };
+		E4958EB92B5D5844005A990C /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EB82B5D5844005A990C /* NSLayoutConstraint+Extension.swift */; };
+		E4958EBB2B5D67B2005A990C /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EBA2B5D67B2005A990C /* ButtonRowView.swift */; };
+		E4958EBD2B5D8909005A990C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4958EBC2B5D8909005A990C /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +53,7 @@
 /* Begin PBXFileReference section */
 		CA5C85D72B5A59630020898C /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		CA6EB0952B5A61B90001045A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA6EB0972B5A62EF0001045A /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		CA6EB0992B5A64E50001045A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		CA6EB0992B5A64E50001045A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CA6EB09B2B5A68500001045A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		CA6EB09D2B5A68730001045A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CA9231002B5633CC007689D4 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +68,17 @@
 		CA9231242B5633CE007689D4 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		CA9231262B5633CE007689D4 /* CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CA9231352B564273007689D4 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
-		CA9231362B564273007689D4 /* NumberButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberButton.xib; sourceTree = "<group>"; };
 		CA92313F2B566502007689D4 /* HorizontalColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalColumn.swift; sourceTree = "<group>"; };
 		CA9231412B566512007689D4 /* HorizontalColumn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalColumn.xib; sourceTree = "<group>"; };
 		CA9231472B566CF5007689D4 /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
 		CA92314A2B5672D7007689D4 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		CA92314F2B593214007689D4 /* Formatter+Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Decimal.swift"; sourceTree = "<group>"; };
+		CA92314F2B593214007689D4 /* Formatter+Decimal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Decimal+Extension.swift"; sourceTree = "<group>"; };
+		E4958EB22B5D0E19005A990C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		E4958EB42B5D1070005A990C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E4958EB62B5D118A005A990C /* FlexLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexLayout.swift; sourceTree = "<group>"; };
+		E4958EB82B5D5844005A990C /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		E4958EBA2B5D67B2005A990C /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
+		E4958EBC2B5D8909005A990C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				CA5C85D72B5A59630020898C /* CalculatorView.swift */,
-				CA6EB0972B5A62EF0001045A /* CalculatorViewController.swift */,
 				CA6EB09B2B5A68500001045A /* ButtonView.swift */,
 				CA6EB09D2B5A68730001045A /* ResultView.swift */,
+				E4958EBA2B5D67B2005A990C /* ButtonRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,7 +120,9 @@
 		CA5C85D62B5A591A0020898C /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				CA92314E2B593208007689D4 /* Extensions */,
 				CA9231032B5633CC007689D4 /* AppDelegate.swift */,
+				E4958EB62B5D118A005A990C /* FlexLayout.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -144,13 +154,13 @@
 				CA5C85D52B5A59140020898C /* View */,
 				CA9231332B563616007689D4 /* ViewModel */,
 				CA9231492B5672CB007689D4 /* Model */,
-				CA92314E2B593208007689D4 /* Extensions */,
 				CA9231092B5633CC007689D4 /* Main.storyboard */,
 				CA6EB0952B5A61B90001045A /* ViewController.swift */,
 				CA9231472B566CF5007689D4 /* ViewControllerDelegate.swift */,
 				CA92310E2B5633CD007689D4 /* LaunchScreen.storyboard */,
 				CA92310C2B5633CD007689D4 /* Assets.xcassets */,
 				CA9231112B5633CD007689D4 /* Info.plist */,
+				E4958EB22B5D0E19005A990C /* CalculatorViewController.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -175,19 +185,10 @@
 		CA9231332B563616007689D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CA9231352B564273007689D4 /* CalculatorButton.swift */,
 				CA92313D2B56647B007689D4 /* HorizontalColumn */,
-				CA9231342B563621007689D4 /* NumberButton */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CA9231342B563621007689D4 /* NumberButton */ = {
-			isa = PBXGroup;
-			children = (
-				CA9231352B564273007689D4 /* CalculatorButton.swift */,
-				CA9231362B564273007689D4 /* NumberButton.xib */,
-			);
-			path = NumberButton;
 			sourceTree = "<group>";
 		};
 		CA92313D2B56647B007689D4 /* HorizontalColumn */ = {
@@ -210,8 +211,11 @@
 		CA92314E2B593208007689D4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CA92314F2B593214007689D4 /* Formatter+Decimal.swift */,
-				CA6EB0992B5A64E50001045A /* UIViewController.swift */,
+				CA92314F2B593214007689D4 /* Formatter+Decimal+Extension.swift */,
+				CA6EB0992B5A64E50001045A /* UIViewController+Extension.swift */,
+				E4958EB42B5D1070005A990C /* UIView+Extension.swift */,
+				E4958EB82B5D5844005A990C /* NSLayoutConstraint+Extension.swift */,
+				E4958EBC2B5D8909005A990C /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,7 +327,6 @@
 				CA9231422B566512007689D4 /* HorizontalColumn.xib in Resources */,
 				CA9231102B5633CD007689D4 /* LaunchScreen.storyboard in Resources */,
 				CA92310D2B5633CD007689D4 /* Assets.xcassets in Resources */,
-				CA9231382B564273007689D4 /* NumberButton.xib in Resources */,
 				CA92310B2B5633CC007689D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,16 +353,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9231482B566CF5007689D4 /* ViewControllerDelegate.swift in Sources */,
+				E4958EB52B5D1070005A990C /* UIView+Extension.swift in Sources */,
 				CA9231372B564273007689D4 /* CalculatorButton.swift in Sources */,
 				CA9231402B566502007689D4 /* HorizontalColumn.swift in Sources */,
+				E4958EBD2B5D8909005A990C /* UIColor+Extension.swift in Sources */,
 				CA5C85D82B5A59630020898C /* CalculatorView.swift in Sources */,
-				CA6EB09A2B5A64E50001045A /* UIViewController.swift in Sources */,
+				CA6EB09A2B5A64E50001045A /* UIViewController+Extension.swift in Sources */,
+				E4958EB72B5D118A005A990C /* FlexLayout.swift in Sources */,
 				CA6EB09E2B5A68730001045A /* ResultView.swift in Sources */,
-				CA9231502B593214007689D4 /* Formatter+Decimal.swift in Sources */,
+				CA9231502B593214007689D4 /* Formatter+Decimal+Extension.swift in Sources */,
+				E4958EB92B5D5844005A990C /* NSLayoutConstraint+Extension.swift in Sources */,
 				CA6EB09C2B5A68500001045A /* ButtonView.swift in Sources */,
 				CA9231042B5633CC007689D4 /* AppDelegate.swift in Sources */,
 				CA6EB0962B5A61B90001045A /* ViewController.swift in Sources */,
-				CA6EB0982B5A62EF0001045A /* CalculatorViewController.swift in Sources */,
+				E4958EBB2B5D67B2005A990C /* ButtonRowView.swift in Sources */,
+				E4958EB32B5D0E19005A990C /* CalculatorViewController.swift in Sources */,
 				CA92314B2B5672D7007689D4 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ struct Calculator {
     private var isNegative = false
     private var display: String = ""
     
-    private var tempTotal: Decimal = 0
+    private var tempTotal: Decimal? = nil
     private var total: Decimal = 0
     
     private var isDecimal: Bool {
@@ -23,10 +23,12 @@ struct Calculator {
     }
     
     var isReset = true
+    
     var displayText: String {
         guard !display.isEmpty else {
             return "0"
         }
+        
         var parsedDouble = Decimal(string: display)
         guard parsedDouble != 0 && !isDecimal else {
             var displays = display.components(separatedBy: ".")
@@ -37,11 +39,10 @@ struct Calculator {
         if isNegative {
             parsedDouble?.negate()
         }
-        var formatted = display.count > 15 ? parsedDouble?.scientificValue : parsedDouble?.decimalValue
+        var formatted = parsedDouble?.decimalValue
         if display.last == "." {
             formatted! += "."
         }
-        
         return formatted ?? "0"
     }
     
@@ -76,19 +77,30 @@ struct Calculator {
         self.operate = operate
         self.total = number
         self.isReset = true
+        self.tempTotal = nil
     }
 
     mutating func onAddOnTapped(_ addOn: AddOn) {
         let number = Decimal(string: self.display) ?? 0
+        if addOn != .equal {
+            self.tempTotal = nil
+        }
+        
         switch addOn {
         case .equal:
             guard !display.isEmpty else {
                 return
             }
-            self.tempTotal = self.total
-            self.calculate(number: number)
-            self.display = self.total.stringValue
+            if self.tempTotal != nil {
+                self.calculate(number: self.tempTotal!)
+            } else {
+                self.tempTotal = self.total
+                self.calculate(number: number)
+            }
+            
+            self.display = self.total.stringValue.count > MAX_LABEL ? self.total.scientificValue : self.total.stringValue
             self.isReset = true
+            
         case .negative:
             self.display = (number  * -1).stringValue
         case .percentage:
@@ -107,7 +119,7 @@ struct Calculator {
             self.appendDisplay(".")
             
         }
-    
+        
     }
     mutating func onDeleteTapped() {
         self.display = ""

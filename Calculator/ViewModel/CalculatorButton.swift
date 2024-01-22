@@ -11,32 +11,29 @@ class CalculatorButton: UIButton {
 
     private var label = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
+    public func setup(labelText: String) {
+        setupUI()
+        setupLabel(labelText)
     }
 
 }
 
 private extension CalculatorButton {
     
-    func setup() {
-        setupUI()
-        setupLabel()
-    }
-    
     func setupUI() {
         self.tintColor = .clear
-        self.backgroundColor = .gray
+        self.backgroundColor = .random
+        self.clipsToBounds = true
+        
+        //LAYOUT
+        self.layoutIfNeeded()
+        self.setNeedsLayout()
+        print(self.frame.height)
         self.layer.cornerRadius = self.frame.height / 2
     }
     
-    func setupLabel() {
+    func setupLabel(_ labelText: String) {
+        label.text = labelText
         self.addSubview(label)
         self.label.font = .systemFont(ofSize: 30, weight: .regular)
     }
