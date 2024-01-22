@@ -89,10 +89,10 @@ private extension FlexLayout {
                 constraints.append( currentView.leadingAnchor.constraint(equalTo: self.parent.leadingAnchor, constant: margin))
             }
             // ANY HAS NEXT VIEW
-            if nextView != nil {
+            if let nextView {
                 constraints.append(contentsOf: [
-                    currentView.trailingAnchor.constraint(equalTo: nextView!.leadingAnchor, constant: -margin ),
-                    currentView.widthAnchor.constraint(equalTo: nextView!.widthAnchor)
+                    currentView.trailingAnchor.constraint(equalTo: nextView.leadingAnchor, constant: -margin ),
+                    currentView.widthAnchor.constraint(equalTo: nextView.widthAnchor)
                 ])
             //LAST VIEW
             } else {
@@ -112,10 +112,10 @@ private extension FlexLayout {
             if index == 0 {
                 constraints.append( currentView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: margin))
             }
-            if nextView != nil {
+            if let nextView {
                 constraints.append(contentsOf: [
-                    currentView.bottomAnchor.constraint(equalTo: nextView!.topAnchor, constant: -margin),
-                    currentView.heightAnchor.constraint(equalTo: nextView!.heightAnchor)
+                    currentView.bottomAnchor.constraint(equalTo: nextView.topAnchor, constant: -margin),
+                    currentView.heightAnchor.constraint(equalTo: nextView.heightAnchor)
                 ])
             } else {
                 let heightAnchor = previousView != nil ? previousView!.heightAnchor : safeArea.heightAnchor

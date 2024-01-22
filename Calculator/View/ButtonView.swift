@@ -8,6 +8,15 @@
 import UIKit
 
 class ButtonView: UIView {
+
+    var buttonRows: [ButtonRowView] = [
+        ButtonRowView().setup(backgroundColor: .black),
+        ButtonRowView().setup(backgroundColor: .gray),
+        ButtonRowView().setup(backgroundColor: .black),
+        ButtonRowView().setup(backgroundColor: .gray),
+        ButtonRowView().setup(backgroundColor: .black),
+    ]
+
     public func setup() -> UIView {
         setupUI()
         return self
@@ -15,18 +24,10 @@ class ButtonView: UIView {
     
     func setupUI() {
         self.backgroundColor = .black
-        
-        let buttonRow1 = ButtonRowView().setup(backgroundColor: .black)
-        let buttonRow2 = ButtonRowView().setup(backgroundColor: .gray)
-        let buttonRow3 = ButtonRowView().setup(backgroundColor: .black)
-        let buttonRow4 = ButtonRowView().setup(backgroundColor: .gray)
-        let buttonRow5 = ButtonRowView().setup(backgroundColor: .black)
-        self.flex(.column).build(views: [
-            buttonRow1,
-            buttonRow2,
-            buttonRow3,
-            buttonRow4,
-            buttonRow5
-        ])
+
+        self.flex(.column).build(views: buttonRows)
+        buttonRows.forEach {
+            $0.updateLayout()
+        }
     }
 }

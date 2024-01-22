@@ -10,12 +10,20 @@ import UIKit
 class CalculatorButton: UIButton {
 
     private var label = UILabel()
-    
-    public func setup(labelText: String) {
+
+    init(labelText: String) {
+        super.init(frame: .zero)
         setupUI()
         setupLabel(labelText)
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func roundedRadius() {
+        self.layer.cornerRadius = self.frame.height / 2
+    }
 }
 
 private extension CalculatorButton {
@@ -25,13 +33,8 @@ private extension CalculatorButton {
         self.backgroundColor = .random
         self.clipsToBounds = true
         
-        //LAYOUT
-        self.layoutIfNeeded()
-        self.setNeedsLayout()
-        print(self.frame.height)
-        self.layer.cornerRadius = self.frame.height / 2
     }
-    
+
     func setupLabel(_ labelText: String) {
         label.text = labelText
         self.addSubview(label)
