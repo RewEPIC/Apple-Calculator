@@ -20,6 +20,12 @@ class ButtonRowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func updateRadius() {
+        buttons.forEach {
+            $0.roundedRadius()
+        }
+    }
+
 }
 
 private extension ButtonRowView {

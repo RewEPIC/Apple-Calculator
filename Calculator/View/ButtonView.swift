@@ -17,14 +17,24 @@ class ButtonView: UIView {
         ButtonRowView(backgroundColor:.black),
     ]
 
-    public func setup() -> UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
-        return self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupUI() {
         self.backgroundColor = .black
 
         self.flex(.column).build(views: buttonRows)
+    }
+
+    func updateRadius() {
+        buttonRows.forEach {
+            $0.updateRadius()
+        }
     }
 }

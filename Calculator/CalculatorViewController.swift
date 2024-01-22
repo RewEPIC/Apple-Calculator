@@ -8,20 +8,32 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-    
+
+    lazy var calculatorView: CalculatorView = {
+        let view = CalculatorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let calView = CalculatorView()
-        calView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(calView)
-
-
+        view.addSubview(calculatorView)
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: calView.topAnchor),
-            view.leadingAnchor.constraint(equalTo: calView.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: calView.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: calView.bottomAnchor),
+            view.topAnchor.constraint(equalTo: calculatorView.topAnchor),
+            view.leadingAnchor.constraint(equalTo: calculatorView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: calculatorView.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: calculatorView.bottomAnchor),
         ])
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        calculatorView.updateRadius()
+
     }
 }

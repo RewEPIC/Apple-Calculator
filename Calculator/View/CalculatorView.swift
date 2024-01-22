@@ -8,15 +8,23 @@
 import UIKit
 
 class CalculatorView: UIView {
-    
+    let resultView = ResultView()
+    let buttonView = ButtonView()
+
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    func updateRadius() {
+        buttonView.updateRadius()
+    }
+
 }
 
 private extension CalculatorView {
@@ -27,10 +35,7 @@ private extension CalculatorView {
     
     func setupUI() {
         self.backgroundColor = .gray
-        
-        let resultView = ResultView().setup()
-        let buttonView = ButtonView().setup()
-        
+
         self.flex(.column).build(views: [
             resultView,
             buttonView
