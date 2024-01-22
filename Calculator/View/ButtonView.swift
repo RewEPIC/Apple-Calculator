@@ -10,11 +10,11 @@ import UIKit
 class ButtonView: UIView {
 
     var buttonRows: [ButtonRowView] = [
-        ButtonRowView().setup(backgroundColor: .black),
-        ButtonRowView().setup(backgroundColor: .gray),
-        ButtonRowView().setup(backgroundColor: .black),
-        ButtonRowView().setup(backgroundColor: .gray),
-        ButtonRowView().setup(backgroundColor: .black),
+        ButtonRowView(backgroundColor: .black),
+        ButtonRowView(backgroundColor:.gray),
+        ButtonRowView(backgroundColor:.black),
+        ButtonRowView(backgroundColor:.gray),
+        ButtonRowView(backgroundColor:.black),
     ]
 
     public func setup() -> UIView {
@@ -26,8 +26,5 @@ class ButtonView: UIView {
         self.backgroundColor = .black
 
         self.flex(.column).build(views: buttonRows)
-        buttonRows.forEach {
-            $0.updateLayout()
-        }
     }
 }

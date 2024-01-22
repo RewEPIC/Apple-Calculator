@@ -10,6 +10,18 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
-        self.view = CalculatorView()
+        super.viewDidLoad()
+
+        let calView = CalculatorView()
+        calView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(calView)
+
+
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: calView.topAnchor),
+            view.leadingAnchor.constraint(equalTo: calView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: calView.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: calView.bottomAnchor),
+        ])
     }
 }

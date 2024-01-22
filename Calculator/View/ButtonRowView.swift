@@ -11,17 +11,13 @@ class ButtonRowView: UIView {
 
     let buttons: [CalculatorButton] = [ "1","2","3","4","5" ].map { CalculatorButton(labelText: $0) }
 
-    func setup(backgroundColor: UIColor) -> ButtonRowView {
-        setupUI( backgroundColor )
-        return self
+    init(backgroundColor: UIColor) {
+        super.init(frame: .zero)
+        setupUI(backgroundColor)
     }
-
-    func updateLayout() {
-        buttons.forEach {
-            $0.layoutIfNeeded()
-            $0.setNeedsLayout()
-            $0.roundedRadius()
-        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
@@ -30,8 +26,8 @@ private extension ButtonRowView {
 
     func setupUI(_ bg: UIColor) {
         self.backgroundColor = bg
-
         self.flex(.row).margin(10).build(views: buttons)
+
     }
 }
 
