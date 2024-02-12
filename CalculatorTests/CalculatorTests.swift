@@ -10,27 +10,76 @@ import XCTest
 
 final class CalculatorTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var calculator: Calculator!
+    
+    override func setUp() {
+        super.setUp()
+        calculator = Calculator()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        super.tearDown()
+        calculator = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testPlus_withNumberIs20AndOperateIsAdd_shouldReturn20() {
+        let number = Decimal(20)
+        let operate: Operator = .add
+        
+        calculator.onOperatorTapped(operate)
+        calculator.calculate(number: number)
+        let result = calculator.totalNumber
+        
+        XCTAssertEqual(result, 20, "0+20 should return 20")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSubstract_withNumberIs10AndOperateIsSubstract_shouldReturnMinus10() {
+        let number = Decimal(10)
+        let operate: Operator = .substract
+        
+        calculator.onOperatorTapped(operate)
+        calculator.calculate(number: number)
+        let result = calculator.totalNumber
+        
+        XCTAssertEqual(result, -10, "0-10 should return 10")
     }
-
+    
+    func testMultiply_withNumberIs5AndOperateIsMultiply_shouldReturn0() {
+        let number = Decimal(5)
+        let operate: Operator = .multiply
+        
+        calculator.onOperatorTapped(operate)
+        calculator.calculate(number: number)
+        let result = calculator.totalNumber
+        
+        XCTAssertEqual(result, 0, "0x5 should return 0")
+    }
+    
+    func testDivide_withNumberIs2AndOperateIsDivide_shouldReturn0() {
+        let number = Decimal(2)
+        let operate: Operator = .divide
+        
+        calculator.onOperatorTapped(operate)
+        calculator.calculate(number: number)
+        let result = calculator.totalNumber
+        
+        XCTAssertEqual(result, 0, "0/2 should return 0")
+    }
+    
+    func testPlusDivide_withNumber1Is4AndNumber2Is5AndOperate1IsAddAndOperate2IsDivide_shouldReturn0_8() {
+        let number1 = Decimal(4)
+        let number2 = Decimal(5)
+        let operate1: Operator = .add
+        let operate2: Operator = .divide
+        
+        calculator.onOperatorTapped(operate1)
+        calculator.calculate(number: number1)
+        calculator.updateDisplay()
+        calculator.onOperatorTapped(operate2)
+        calculator.calculate(number: number2)
+        calculator.updateDisplay()
+        let result = calculator.totalNumber
+        
+        XCTAssertEqual(result, 0.8, "(0+4)/5 should return 0.8")
+    }
 }

@@ -23,6 +23,9 @@ struct Calculator {
     }
     
     var isReset = true
+    var totalNumber: Decimal {
+        return self.total
+    }
     
     var displayText: String {
         guard !display.isEmpty else {
@@ -66,7 +69,7 @@ struct Calculator {
         if !isReset && self.display != "0" {
             self.appendDisplay(String(number))
         } else {
-            self.display = numberText
+            self.updateDisplay(numberText)
             self.isReset = false
         }
     }
@@ -98,21 +101,21 @@ struct Calculator {
                 self.calculate(number: number)
             }
             
-            self.display = self.total.stringValue.count > MAX_LABEL ? self.total.scientificValue : self.total.stringValue
+            self.updateDisplay(self.total)
             self.isReset = true
             
         case .negative:
-            self.display = (number  * -1).stringValue
+            self.updateDisplay(number * -1)
         case .percentage:
             self.total = divide(Decimal(string: self.display)!,100)
-            self.display = self.total.stringValue
+            self.updateDisplay(self.total)
             self.isReset = true
         case .decimal:
             guard !isDecimal else {
                 return
             }
             if display.isEmpty {
-                self.display = "0"
+                self.updateDisplay("0")
             }
             
             self.isReset = false
@@ -122,7 +125,7 @@ struct Calculator {
         
     }
     mutating func onDeleteTapped() {
-        self.display = ""
+        self.updateDisplay("")
         self.total = 0
         self.isNegative = false
         self.isReset = true
@@ -131,6 +134,17 @@ struct Calculator {
         if self.display.count <= MAX_LABEL {
             self.display.append(appendString)
         }
+    }
+    
+    mutating func updateDisplay() {
+        self.updateDisplay(self.total)
+    }
+    
+    mutating func updateDisplay(_ number: Decimal) {
+        self.display = number.stringValue.count > MAX_LABEL ? number.scientificValue : number.stringValue
+    }
+    mutating func updateDisplay(_ display: String) {
+        self.display = display
     }
     
     private func divide(_ divider: Decimal, _ number: Decimal) -> Decimal {
